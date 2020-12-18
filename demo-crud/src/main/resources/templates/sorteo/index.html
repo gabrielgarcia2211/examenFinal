@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Personas</title>
+
+<!-- Bootstrap CSS -->
+<link href="../static/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+	<div class="container">
+		<br>
+		<div>
+			<a href="/" class="btn btn-warning" style="margin-right: -20px;display:inline-block;">Volver</a>
+		</div>
+		<h2 th:if="${list == null}">No hay sorteos</h2>
+		<div th:if="${list !=null}">
+			<h2>Sorteo</h2> 
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Sorteo</th>
+						<th>Fecha</th>
+						<th>Boleto</th>
+						<th>Numero</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="sorteo : ${list}">
+						<td th:text="${sorteo.nombre}">
+						<td th:text="${sorteo.fecha}">
+						<td th:text="${sorteo.boletas}">
+						<td th:text="${sorteo.numeros}">
+						<div th:if="${#strings.equals(sorteo.maximo, 0)}">
+						    <td><a  href="/sorteo/generar" class="btn btn-info" >Generar</a></td>
+						</div>
+						
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
