@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Personas</title>
+<title>Agregar Sorteo</title>
 
 <!-- Bootstrap CSS -->
 <link href="../static/css/bootstrap.css" rel="stylesheet"
@@ -14,10 +14,27 @@
 		    <div class="col-sm-3">
 		    </div>
 		    <div class="col-sm-6">
-		      
+		     <form action="#" th:action="@{/sorteo/save}" method="post">
+				  <div class="form-group">
+				    <label for="sorteo">Sorteo</label>
+				    <input type="text" class="form-control" id="sorteo" name="sorteo" >
+				  </div>
+				  <div class="form-group">
+				    <label for="fecha">Fecha</label>
+				    <input type="date" class="form-control" id="fecha" name="fecha">
+				  </div>
+				  <div class="form-group">
+				    <label for="boleta">Boleta</label>
+				    <input type="number" class="form-control" id="boleta" name="boleta" >
+				  </div>
+				  <div class="form-group">
+				    <label for="numeros">Numeros</label>
+				    <input type="number" class="form-control" id="numeros" name="numeros" >
+				  </div>
+				  <button type="submit" class="btn btn-primary">Guardar</button>
+				</form>
 		    </div>
 		    <div class="col-sm-3">
- 			<a href="/logout">Logout</a>
  
 		    </div>
 		  </div>
