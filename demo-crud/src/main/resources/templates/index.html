@@ -16,20 +16,20 @@
 		    <div class="col-sm-6">
 		     <form action="#" th:action="@{/sorteo/save}" method="post">
 				  <div class="form-group">
-				    <label for="sorteo">Sorteo</label>
-				    <input type="text" class="form-control" id="sorteo" name="sorteo" >
+				    <label for="nombre">Sorteo</label>
+				    <input type="text" class="form-control" id="nombre"  name="nombre" required >
 				  </div>
 				  <div class="form-group">
 				    <label for="fecha">Fecha</label>
-				    <input type="date" class="form-control" id="fecha" name="fecha">
+				    <input type="date" class="form-control" id="fecha" name="fecha" required>
 				  </div>
 				  <div class="form-group">
-				    <label for="boleta">Boleta</label>
-				    <input type="number" class="form-control" id="boleta" name="boleta" >
+				    <label for="boletas">Boleta</label>
+				    <input type="number" class="form-control" id="boletas"  name="boletas" required >
 				  </div>
 				  <div class="form-group">
 				    <label for="numeros">Numeros</label>
-				    <input type="number" class="form-control" id="numeros" name="numeros" >
+				    <input type="number" class="form-control" id="numeros"  name="numeros" required >
 				  </div>
 				  <button type="submit" class="btn btn-primary">Guardar</button>
 				</form>

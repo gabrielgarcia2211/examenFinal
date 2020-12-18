@@ -21,8 +21,7 @@ public class Sorteo implements Serializable {
 
 	private int boletas;
 
-	@Temporal(TemporalType.DATE)
-	private Date fecha;
+	private String fecha;
 
 	private int maximo;
 
@@ -57,11 +56,11 @@ public class Sorteo implements Serializable {
 		this.boletas = boletas;
 	}
 
-	public Date getFecha() {
+	public String getFecha() {
 		return this.fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 
