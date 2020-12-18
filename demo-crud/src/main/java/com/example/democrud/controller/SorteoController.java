@@ -1,6 +1,7 @@
 package com.example.democrud.controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,8 +11,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.democrud.model.Boleta;
 import com.example.democrud.model.Sorteo;
 import com.example.democrud.service.api.SorteoServiceAPI;
+import com.example.democrud.service.api.BoletaServiceAPI;
 
 @Controller
 @RequestMapping("/sorteo")
@@ -20,6 +23,9 @@ public class SorteoController {
 	
 	@Autowired
 	private SorteoServiceAPI sorteoServiceAPI;
+	
+	@Autowired
+	private BoletaServiceAPI boletoServiceAPI;
 	
 	
 	@PostMapping("/save")
@@ -42,17 +48,28 @@ public class SorteoController {
 		Sorteo nu =  sorteoServiceAPI.get(id);
 		int numero = nu.getNumeros();
 		int maximo = nu.getMaximo();
+		int rango = 0;
 		
-		ArrayList numeros = new ArrayList();
-		
-		for (int i = 0; i < maximo; i++) {
-		    numero = (int) (Math.random() * 50 + 1);
-		    if (numeros.contains(numero)) {
-		        i--;
-		    } else {
-		        numeros.add(numero);
-		    }
+		for(int k=1; k<= numero;k++) {
+			rango = rango*10;
 		}
+		
+		ArrayList boleta = new ArrayList();
+		
+		for (int i = 0; i < rango; i++) {
+			Boleta h = new Boleta();
+		    numero = (int) (Math.random() * 50 + 1);
+		    boleta.add(numero);
+			h.setId(0);
+			h.setBoleta(numero);
+			//h.setFecha(new Date());
+			h.setGanadora(0);
+		}
+		
+		
+		
+	
+		
 		return "sorteo/index";
 	}
 	

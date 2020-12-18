@@ -37,6 +37,10 @@
 						<div th:if="${#strings.equals(sorteo.maximo, 0)}">
 						    <td><a  href="/sorteo/generar" class="btn btn-info" >Generar</a></td>
 						</div>
+						<div th:if="${#strings.equals(sorteo.maximo, 1)}">
+						    <td><a  href="" class="btn btn-info" >Registrar</a></td>
+						      <td><a  href="" class="btn btn-info" >Sorteo</a></td>
+						</div>
 						
 						
 					</tr>
